@@ -1,5 +1,5 @@
 # ksscrape
-ksscrape is an easy way to scrape project information from [kickstarter's discovery page](https://www.kickstarter.com/discover) using Python with Selenium.
+ksscrape is an easy way to scrape project information from [kickstarter's discovery page](https://www.kickstarter.com/discover) using Python with Selenium and BeautifulSoup.
 
 ## Installation
 ksscrape.search.DiscoverySearcher requires a Selenium webdriver object. Download [ChromeDriver](http://chromedriver.chromium.org/downloads) (or any webdriver) and add it to your PATH environment variable for easy access.
