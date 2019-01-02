@@ -7,8 +7,7 @@ ksscrape.search.DiscoverySearcher requires a Selenium webdriver object. Download
 Run the following commands to install ksscrape.
 ```
 git clone https://github.com/televisedprogram/ksscrape.git
-cd ksscrape
-pip install . --upgrade
+pip install ./ksscrape/ --upgrade
 ```
 
 ## Usage

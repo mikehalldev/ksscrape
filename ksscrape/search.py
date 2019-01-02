@@ -105,7 +105,7 @@ class DiscoverySearcher(object):
             ).click()
     
     def scroll_until_count(self, count, min_sleep=2, max_sleep=8):
-        """Scrolls until 'count' is in view. Sleeps between min/max sleep times"""
+        """Scrolls until 'count' projects are in view. Sleeps between min/max sleep times"""
         while len(self.get_project_card_elements()) < count:
             self._click_load_more()
             time.sleep(
