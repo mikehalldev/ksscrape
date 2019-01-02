@@ -13,5 +13,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/televisedprogram/ksscrape.git",
     packages=setuptools.find_packages(),
-    install_requires=['selenium']
+    install_requires=[
+        'selenium',
+        'beatifulsoup4',
+        'lxml'
+    ]
 )
