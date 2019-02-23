@@ -129,3 +129,10 @@ class DiscoverySearcher(object):
         for card in cards:
             projects.append(json.loads(card.get_attribute('data-project')))
         return projects
+
+    def get_project_urls(self):
+        cards = self.get_cards_dictionaries()
+        urls = []
+        for card in cards:
+            urls.append(card['urls']['web']['project'])
+        return urls
