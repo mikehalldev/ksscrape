@@ -10,7 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-ANCHOR_TAG_BUTTON = '//a[@role="button" and contains(text(), "{}")]'
+ANCHOR_BUTTON_XPATH_TEMPLATE = '//a[@role="button" and contains(text(), "{}")]'
 DROPDOWN_CONTAINER_XPATH = '//div[@aria-hidden="false" and @id="{}"]'
 
 
@@ -49,14 +49,14 @@ class DiscoverySearcher(object):
         self._click_dropdown('category')
 
         category = self.driver.find_element_by_xpath(
-            ANCHOR_TAG_BUTTON.format(category)
+            ANCHOR_BUTTON_XPATH_TEMPLATE.format(category)
         )
         category.click()
         self._url_change_wait()
 
         if sub_category:
             sub_category = self.driver.find_element_by_xpath(
-                ANCHOR_TAG_BUTTON.format(sub_category)
+                ANCHOR_BUTTON_XPATH_TEMPLATE.format(sub_category)
             )
             sub_category.click()
             self._url_change_wait()
@@ -64,7 +64,7 @@ class DiscoverySearcher(object):
     def _select_sort_by(self, sort_by):
         self._click_dropdown('sort')
         self.driver.find_element_by_xpath(
-            ANCHOR_TAG_BUTTON.format(sort_by)
+            ANCHOR_BUTTON_XPATH_TEMPLATE.format(sort_by)
         ).click()
 
     def _click_dropdown(self, container_type):
@@ -101,8 +101,7 @@ class DiscoverySearcher(object):
     def _click_load_more(self):
         """Loads more projects"""
         self.driver.find_element_by_xpath(
-            ANCHOR_TAG_BUTTON.format('Load more')
-            ).click()
+            ANCHOR_BUTTON_XPATH_TEMPLATE.format('Load more')).click()
     
     def scroll_until_count(self, count, min_sleep=2, max_sleep=8):
         """Scrolls until 'count' projects are in view. Sleeps between min/max sleep times"""
